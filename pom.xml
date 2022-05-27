@@ -11,7 +11,7 @@
 
     <properties>
         <ark.version>2.0.0</ark.version>
-        <springboot.dependencies.version>1.5.22.RELEASE</springboot.dependencies.version>
+        <springboot.dependencies.version>2.2.2.RELEASE</springboot.dependencies.version>
     </properties>
 
     <dependencyManagement>
@@ -27,6 +27,16 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
